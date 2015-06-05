@@ -1,27 +1,42 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
-<!-- above set at the top of the file will set     -->
-<!-- the browser's rendering engine into           -->
-<!-- "Quirks Mode". Replacing this declaration     -->
-<!-- with a "Standards Mode" doctype is supported, -->
-<!-- but may lead to some differences in layout.   -->
-
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Hello App Engine</title>
+    <title>データの表示</title>
+    <script type="text/javascript" src="lib.js"></script>
+        <script type="text/javascript">
+        <!--
+        function callback(request){
+            var json = eval(request.responseText);
+            var res = '';
+            if (json.length == 1){
+                res += '<tr><td>' + json[0].id +'</td></tr>';
+                res += '<tr><td>' + json[0].title +'</td></tr>';
+                res += '<tr><td>' + json[0].url +'</td></tr>';
+                res += '<tr><td>' + json[0].comment +'</td></tr>';
+            } else {
+                for (var i = 0;i < json.length;i++){
+                    res += '<tr><td><a href="javascript:return false;" onclick="getData(' + json[i].id +');">' + json[i].id + '</a></td>';
+                    res += '<td><a href="' + json[i].url + '">' + json[i].title + '</a></td>' +
+                    '<td><a href="edit.html?id=' + json[i].id + '">Edit</td>' +
+                    '<td><a href="del.html?id=' + json[i].id + '">Delete</td></tr>';
+                }
+            }
+            var obj = document.getElementById("datatable");
+            obj.innerHTML = res;
+        }
+        //-->
+        </script>
   </head>
-
-  <body>
-    <h1>Hello App Engine!</h1>
-	
-    <table>
+  <body onload="getData(null);">
+    <h1>データの表示</h1>
+     
+    <table id="datatable" border="1">
       <tr>
-        <td colspan="2" style="font-weight:bold;">Available Servlets:</td>        
-      </tr>
-      <tr>
-        <td><a href="suger">Suger</a></td>
+        <td>wait...</td>
       </tr>
     </table>
+    <br>
+    <div><a href="add.html">データの新規追加</a></div>
   </body>
 </html>
