@@ -30,7 +30,21 @@
                       <td class="price">${rec.price} 円</td>
                   </tr>
               </c:forEach>
-
+			<tr>
+      			<td>商品の発送先</td>
+      			<td><input type="text" name="user" size="16" value="" /></td>
+    		</tr>
+    		<tr>
+      			<td>商品の到着日時</td>
+				<td><select name="sample1">
+				  <option value="">選択してください</option>
+				  <option value="1">午前中</option>
+				  <option value="2">12-14時</option>
+				  <option value="3">14-16時</option>
+				  <option value="4">16-18時</option>
+				  <option value="5">18-21時</option>
+				</select></td>
+    		</tr>
           </table>
           <input type="submit" name="cart.do" value="カートの内容を確認して注文へ進む" />
       </form>
