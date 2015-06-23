@@ -9,11 +9,42 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>Suger</servlet-name>
 		<servlet-class>com.tuyano.libro.suger.SugerServlet</servlet-class>
 	</servlet>
-	
+	<servlet>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>com.tuyano.libro.suger.LoginServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Logout</servlet-name>
+		<servlet-class>com.tuyano.libro.suger.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Cart</servlet-name>
+		<servlet-class>com.tuyano.libro.suger.CartServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Reset</servlet-name>
+		<servlet-class>com.tuyano.libro.suger.ResetServlet</servlet-class>
+	</servlet>
 	
 	<servlet-mapping>
 		<servlet-name>Suger</servlet-name>
 		<url-pattern>/suger</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Logout</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Cart</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Reset</servlet-name>
+		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 	
 	<welcome-file-list>

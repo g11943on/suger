@@ -13,7 +13,7 @@
     </head>
   <h1>Suger Popへようこそ！</h1>
 
-  <form action="/suger" method="post" class="login">
+  <form action="login.do" method="post" class="login">
     <table>
     <tr>
       <td>ユーザ名</td>
